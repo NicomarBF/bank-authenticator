@@ -1,0 +1,25 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Backend for bank authentication system",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NicomarBF/bank-authenticator.git"
+  },
+  "author": "Equipe Rocket",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NicomarBF/bank-authenticator/issues"
+  },
+  "homepage": "https://github.com/NicomarBF/bank-authenticator#readme",
+  "dependencies": {
+    "express": "^4.18.3",
+    "pg": "^8.11.3",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.37.1"
+  }
+}
