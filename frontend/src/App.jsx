@@ -15,6 +15,7 @@ const App = () => {
 
   const handleLogout = () => {
     setIsAuthenticated(false);
+    navigate('/login');
   };
 
   return (
