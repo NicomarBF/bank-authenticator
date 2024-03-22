@@ -3,6 +3,7 @@
 const express = require('express');
 const app = express();
 const accountRoutes = require('./routes/accountRoutes');
+const sessionRoutes = require('./routes/sessionRoutes');
 
 const Sincronize = require('./entities/Sincronize'); // Importa o arquivo de sincronização com o banco de dados
 
@@ -11,7 +12,8 @@ const Sincronize = require('./entities/Sincronize'); // Importa o arquivo de sin
 app.use(express.json());
 
 // Monta as rotas
-app.use('/accounts', accountRoutes);
+app.use('/account', accountRoutes);
+app.use('/session', sessionRoutes);
 
 // Define a porta do servidor
 const PORT = process.env.PORT || 3000;
