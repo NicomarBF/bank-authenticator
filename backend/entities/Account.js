@@ -3,7 +3,11 @@ const sequelize = require('../connection/database');
 
 const Account = sequelize.define('Account', {
     code: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    password: {
+        type: DataTypes.STRING,
         allowNull: false
     }
 });

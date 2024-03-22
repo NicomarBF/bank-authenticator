@@ -9,6 +9,6 @@ services:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: admin
     ports:
-      - "5432:5432"
+      - "5431:5432"
     volumes:
-      - /Users/nicomarbonkoskifilho/coding/bank-authenticator/postgres_data:/var/lib/postgresql/data
+      - C:\Users\Pichau\Documents\coding\project-idea\bank-authenticator\postgres_data:/var/lib/postgresql/data
