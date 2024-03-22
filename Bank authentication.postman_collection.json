@@ -1,0 +1,91 @@
+{
+	"info": {
+		"_postman_id": "89772c25-96c7-4044-9208-a4a831a84bdf",
+		"name": "Bank authentication",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Account",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"code\": \"000005\",\r\n    \"password\": \"200602\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/account",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"account"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Session generate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"code\": \"000005\",\r\n    \"password\": \"20062002\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/session",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"session"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Session validate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{     \r\n    \"session\": 1,     \r\n    \"sequence\": [2,2,2,0,2,2]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/session/validate",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"session",
+						"validate"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
