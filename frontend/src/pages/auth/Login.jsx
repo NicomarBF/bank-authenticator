@@ -63,7 +63,7 @@ const Login = ({ onLogin }) => {
             }
 
             $.ajax({
-                url: '/session/validate',
+                url: 'http://localhost:8080/session/validate',
                 type: 'POST',
                 data: JSON.stringify(body),
                 contentType: 'application/json',
@@ -85,7 +85,7 @@ const Login = ({ onLogin }) => {
             }
 
             $.ajax({
-                url: '/session/generate',
+                url: 'http://localhost:8080/session/generate',
                 type: 'POST',
                 data: JSON.stringify(body),
                 contentType: 'application/json',
