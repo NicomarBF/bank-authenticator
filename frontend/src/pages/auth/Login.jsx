@@ -1,8 +1,20 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+// Components
 import { Button, Input, Typography } from "@material-tailwind/react";
+
+// Icons
 import { Backspace } from 'phosphor-react';
 
-const Login = () => {
+// Toastify
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+// eslint-disable-next-line react/prop-types
+const Login = ({ onLogin }) => {
+
+    const navigate = useNavigate();
     const [password, setPassword] = useState('');
 
     const handleButtonClick = (value) => {
@@ -13,22 +25,24 @@ const Login = () => {
 
     const handleClearClick = () => {
         setPassword('');
-        // setPassword(prevPassword => prevPassword.slice(0, -1));
     };
 
     const handleAccessClick = () => {
-        // Faça o que precisa ser feito quando o botão "Acessar" é clicado
-        // Por exemplo, enviar a senha para a autenticação
         console.log('Senha:', password);
-        // Limpar o campo de senha após clicar em "Acessar"
-        setPassword('');
+        if (!password) {
+            toast.warning('A senha não pode ser vazia', { position: "top-right", autoClose: 2000, hideProgressBar: false, closeOnClick: true, pauseOnHover: true, draggable: true, progress: undefined, pauseOnFocusLoss: false, theme: "light" });
+        } else {
+            onLogin();
+            navigate('/');
+        }
     };
 
     return(
-        <div className='flex justify-center items-center align-middle w-full h-screen bg-gray-400'>
-            <div className='card w-1/5 h-1/2 rounded-xl px-12 py-12 bg-white'>
-                <div className=''>
-                    <label className='text-3xl'>Bank Authenticator</label>
+        <div className='flex justify-center items-center align-middle w-full h-screen bg-[#EEF2F5]'>
+            <div className='card w-1/5 h-1/2 rounded-md px-12 py-12 bg-white'>
+                <div className='flex flex-col'>
+                    <label className='text-2xl text-label font-bold'>Segurança Bancária</label>
+                    <label className='text-sm text-desc font-normal'>Acesso Seguro ao seu Banco</label>
                 </div>
 
                 <div className="w-[18rem] py-8">
@@ -77,6 +91,8 @@ const Login = () => {
                     <Button variant="filled" className='w-[18rem]' onClick={handleAccessClick}>Acessar</Button>
                 </div>
             </div>
+
+            <ToastContainer className={'text-sm'} style={{ zIndex: "10000" }} />
         </div>
     )
 };
